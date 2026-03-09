@@ -1,0 +1,24 @@
+[mgr]
+ratio = [0, 1, 0]
+show_hidden = true
+linemode = "git_stats"
+
+[preview]
+enabled = true
+tab_size = 2
+
+[opener]
+edit = [
+    { run = "git diff --no-color %s | less -R", desc = "Git Diff", block = true },
+]
+cd = [
+    { run = 'cd "$1" && $SHELL', block = true, desc = "Shell" }
+]
+
+[open]
+rules = [
+  { url = "*/", use = ["cd"] },
+  { mime = "text/*", use = ["edit"] },
+  { mime = "image/*", use = ["open"] },
+  { mime = "{audio,video}/*", use = ["play"] },
+]

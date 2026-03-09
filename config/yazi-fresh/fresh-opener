@@ -1,0 +1,16 @@
+#!/bin/bash
+exec &>> /tmp/yazi-opener.log
+echo "=== OPENER CALLED ==="
+echo "Args: $@"
+echo "PWD: $(pwd)"
+echo "HOME: $HOME"
+echo "PATH: $PATH"
+echo "YAZI_CONFIG_HOME: $YAZI_CONFIG_HOME"
+which fresh 2>&1 || echo "fresh not in PATH"
+file="$1"
+if [ -n "$file" ]; then
+  echo "Opening file: $file"
+  session_name=$(pwd | sed 's|/|-|g' | sed 's/^-//')
+  echo "Session: $session_name"
+  fresh --cmd session open-file "$session_name" "$file" &
+fi

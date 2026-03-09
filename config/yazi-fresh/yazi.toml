@@ -1,0 +1,18 @@
+[mgr]
+ratio = [0, 1, 0]
+show_hidden = true
+linemode = "git_stats"
+
+[opener]
+edit = [
+  { run = "/home/deck/.config/yazi-fresh/opener.sh %s", desc = "Fresh", block = true },
+]
+
+[open]
+rules = [
+  { mime = "text/*", use = ["edit"] },
+  { url = "*", use = ["edit"] },
+]
+
+[cwd]
+file = "/tmp/yazi-cwd"

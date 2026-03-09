@@ -1,0 +1,19 @@
+# Ignore backup files
+*.bak
+*~
+
+# Ignore common temp files
+*.tmp
+*.swp
+*.log
+
+# Ignore cache and generated files
+**/.cache/
+**/node_modules/
+**/__pycache__/
+
+# Ignore yazi plugins (they are git repos)
+config/yazi/plugins/*
+config/yazi-chooser/plugins/*
+config/yazi-fresh/plugins/*
+config/yazi-git/plugins/*

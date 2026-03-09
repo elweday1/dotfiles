@@ -1,0 +1,31 @@
+# Yazi keymap for git workflow
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "f" ]
+run = "plugin git-filter"
+desc = "Show only git-changed files"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "a" ]
+run = "shell git add ."
+desc = "Git add all"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "c" ]
+run = "shell git commit"
+desc = "Git commit"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "d" ]
+run = "shell git diff"
+desc = "Git diff"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "l" ]
+run = "shell git log --oneline -20"
+desc = "Git log"
+
+[[mgr.prepend_keymap]]
+on  = [ "g", "s" ]
+run = "shell git status"
+desc = "Git status"

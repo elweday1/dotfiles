@@ -1,0 +1,59 @@
+# Yazi keymap for fresh workflow
+
+# Open file with Enter or l
+[[mgr.prepend_keymap]]
+on = "Enter"
+run = "open"
+desc = "Open file"
+
+[[mgr.prepend_keymap]]
+on = "l"
+run = "open"
+desc = "Open file"
+
+# Disable all quit keys - must exit tmux to quit
+[[mgr.prepend_keymap]]
+on = "q"
+run = "noop"
+desc = "Disabled"
+
+[[mgr.prepend_keymap]]
+on = "Q"
+run = "noop"
+desc = "Disabled"
+
+# Git operations
+[[mgr.prepend_keymap]]
+on = ["g", "z"]
+run = "plugin vcs-files"
+desc = "Show only git-changed files"
+
+[[mgr.prepend_keymap]]
+on = ["g", "d"]
+run = "plugin git-diff"
+desc = "Git diff in fresh"
+
+[[mgr.prepend_keymap]]
+on = ["g", "a"]
+run = "shell git add ."
+desc = "Git add all"
+
+[[mgr.prepend_keymap]]
+on = ["g", "c"]
+run = "shell git commit"
+desc = "Git commit"
+
+[[mgr.prepend_keymap]]
+on = ["g", "l"]
+run = "shell git log --oneline -20"
+desc = "Git log"
+
+[[mgr.prepend_keymap]]
+on = ["g", "s"]
+run = "shell git status"
+desc = "Git status"
+
+[[mgr.prepend_keymap]]
+on = ["g", "r"]
+run = "shell git restore --staged ."
+desc = "Git unstage all"

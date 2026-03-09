@@ -1,0 +1,79 @@
+%YAML 1.2
+---
+name: KDL
+scope: source.kdl
+version: 1
+
+file_extensions:
+  - kdl
+
+variables:
+  ident: '[a-zA-Z_][a-zA-Z0-9_-]*'
+  string_escape: '\\.'
+  hex_digit: '[0-9a-fA-F]'
+
+contexts:
+  main:
+    # Slashdash comments (/-)
+    - match: '/-.*$'
+      scope: comment.line
+
+    # Line comments
+    - match: '//.*$'
+      scope: comment.line
+
+    # Strings
+    - match: '"'
+      scope: string.quoted.double
+      push:
+        - meta_scope: string.quoted.double
+        - match: '"'
+          pop: true
+        - match: '{{string_escape}}'
+          scope: constant.character.escape
+        - match: '\\u{ {{hex_digit}+} }'
+          scope: constant.character.escape
+
+    # Raw strings (r"..." or r#"..."#)
+    - match: 'r#*'
+      scope: string.quoted.raw
+      push:
+        - meta_scope: string.quoted.raw
+        - match: '"'
+          pop: true
+
+    # Numbers
+    - match: '-?[\d]+\.?[\d]*([eE][+-]?[\d]+)?'
+      scope: constant.numeric
+
+    # Boolean
+    - match: '\b(true|false)\b'
+      scope: constant.boolean
+
+    # Null
+    - match: '\bnull\b'
+      scope: constant.null
+
+    # Node names (identifiers at start of line or after brace)
+    - match: '{{ident}}'
+      scope: entity.name.tag
+
+    # Property keys
+    - match: '{{ident}}'
+      scope: variable.other
+
+    # Type annotations
+    - match: '-[a-zA-Z_][a-zA-Z0-9_]*'
+      scope: storage.type
+
+    # Operators
+    - match: '[=:]'
+      scope: keyword.operator
+
+    # Brackets
+    - match: '[{}()]'
+      scope: punctuation.bracket
+
+    # Semicolon
+    - match: ';'
+      scope: punctuation.separator

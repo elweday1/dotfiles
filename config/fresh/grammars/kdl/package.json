@@ -1,0 +1,24 @@
+{
+  "$schema": "https://raw.githubusercontent.com/sinelaw/fresh/main/crates/fresh-editor/plugins/schemas/package.schema.json",
+  "name": "kdl",
+  "version": "0.1.0",
+  "description": "Language support for KDL",
+  "type": "language",
+  "author": "Community",
+  "license": "MIT",
+  "fresh": {
+    "grammar": {
+      "file": "grammars/kdl.sublime-syntax",
+      "extensions": ["kdl"]
+    },
+    "language": {
+      "commentPrefix": "//",
+      "autoIndent": true
+    },
+    "lsp": {
+      "command": "kdl-lsp",
+      "args": [],
+      "autoStart": true
+    }
+  }
+}

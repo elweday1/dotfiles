@@ -1,0 +1,12 @@
+[[plugin.deps]]
+use = "yazi-rs/plugins:no-status"
+rev = "25918dc"
+hash = "3e023d31f29201efdac2a6ae35fedb78"
+
+[[plugin.deps]]
+use = "yazi-rs/plugins:piper"
+rev = "b224ddf"
+hash = "384464b6df8cb807425c521f8cd790f3"
+
+[flavor]
+deps = []

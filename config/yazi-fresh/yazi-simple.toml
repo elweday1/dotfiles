@@ -1,0 +1,7 @@
+[manager]
+ratio = [0, 1, 0]
+show_hidden = true
+relativize = true
+
+[opener]
+edit = ["/home/deck/.config/yazi-fresh/fresh-opener"]

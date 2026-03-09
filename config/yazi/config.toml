@@ -1,0 +1,14 @@
+[file]
+password_vault = "kwallet"
+
+[manager]
+layout = [[0, 1, 1]]
+show_hidden = false
+relativize = true
+
+[preview]
+image = true
+image_backend = "iterm2"
+
+[opener]
+edit = ["/home/deck/.config/yazi-fresh/fresh-opener"]

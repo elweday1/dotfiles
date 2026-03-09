@@ -1,0 +1,22 @@
+# Yazi two-column layout config
+# Usage: yazi --config ~/.config/yazi/config-2col.toml
+
+[file]
+password_vault = "kwallet"
+
+[manager]
+# Two column: file list (0) | preview (1)
+layout = [[0, 1, 1]]
+show_hidden = false
+relativize = true
+sort_by = "natural"
+sort_dir_first = true
+
+[preview]
+image = true
+image_backend = "iterm2"
+header = true
+wrap = false
+
+[input]
+cleanup = true

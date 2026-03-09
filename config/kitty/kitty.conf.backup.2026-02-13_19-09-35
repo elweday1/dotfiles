@@ -1,0 +1,45 @@
+font_family      JetBrains Mono
+font_size        12.0
+background_opacity 0.85
+background_blur  1
+hide_window_decorations no
+window_padding_width 10
+
+# Enable mouse and touch interactions
+mouse_hide_wait 3.0
+touch_scroll_multiplier 2.0
+open_url_with default
+# url_color #0087bd
+url_style curly
+copy_on_select yes
+focus_follows_mouse yes
+linux_display_server wayland
+touch_scroll_multiplier 5.0
+enable_audio_bell no
+confirm_audio_close 0
+
+# --- Touch & Scrolling Fixes ---
+# Increase multiplier so flicking feels natural on 1600p screens
+touch_scroll_multiplier 8.0
+allow_remote_control yes
+listen_on unix:/tmp/mykitty
+wheel_scroll_multiplier 5.0
+clipboard_control write-clipboard write-primary read-clipboard read-primary
+
+unmap right_click
+# --- Advanced Mouse Mapping ---
+# This forces "Taps" to act as "Left Clicks" even in TUI apps like Yazi
+mouse_map left click ungrabbed mouse_handle_click selection link prompt
+mouse_map left press ungrabbed mouse_trigger_click_element
+
+# Enable "Click and Drag" for text without needing a keyboard
+mouse_map left drag ungrabbed mouse_selection normal
+
+# Right-click (or long press) to open the context menu / paste
+mouse_map right click  ungrabbed paste_from_clipboard
+
+
+# BEGIN_KITTY_THEME
+# Noctalia
+include current-theme.conf
+# END_KITTY_THEME

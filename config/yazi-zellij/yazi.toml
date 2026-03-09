@@ -1,0 +1,10 @@
+# Yazi config for tmux sidebar - opens in fresh pane
+
+[mgr]
+ratio = [0, 1, 0]
+show_hidden = true
+
+[opener]
+edit = [
+    { run = "/home/deck/.config/yazi-zellij/opener.sh '%s'", desc = "Open in Fresh", block = false },
+]

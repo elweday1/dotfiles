@@ -1,0 +1,1 @@
+/home/deck/.config/yazi-zellij/yazi-wrapper.sh

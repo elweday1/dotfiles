@@ -1,0 +1,16 @@
+[file]
+password_vault = "kwallet"
+
+[manager]
+ratio = [0, 1, 0]
+show_hidden = false
+relativize = true
+
+[mgr]
+ratio = [0, 1, 0]
+show_hidden = true
+linemode = "git_stats"
+
+[opener]
+# Use fresh for editable text files
+edit = ["fresh"]
